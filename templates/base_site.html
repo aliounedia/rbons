@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Greefies Css Template</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" media="screen">
+
+</head>
+
+<body>
+<div id="main_container">
+	<div id="header">
+    	<div id="logo"><a href="home.html"><img src="/images/logo.png" alt="" title="" border="0"></a></div>
+        
+        <div id="menu">
+            <ul>                                        
+                <li><a class="current" href="/accounts/login/" title="">Login</a></li>
+                <li><a class="current" href="/accounts/logout/" title="">Logout</a></li>
+		    <li><a class="current" href="/rbons_check/" title="" >Rebons </a></li>
+		    {% if disable_for_user %}
+			<li> test: {{ disable_for_user }}</li>
+		    	<li><a class="current" href="/search_segment"  title="">Segment Satut</a></li>
+		    	<li><a class="current" href="/search_segments"  title="">Segments Status</a></li>
+		 	<li><a class="current" href="/search_cnanondefs"  title="">CNANONDEF</a></li>
+		    {% endif %}
+		   
+            </ul>
+        </div>
+	  
+    </div>
+    
+    <!--div class="green_box">    	
+	  <h2> Partie Rebons Commerciaux.</h2>
+	  <p>Vous etes sur l' interface des Reboons Commerciaux.</p>
+    </div--><!--end of main content-->
+    <div>
+	{% block content %}
+	{% endblock %}
+    </div>
+
+     <div id="footer">
+     	<div class="copyright">
+<a href="home.html">adia@pcci.sn :Tel :3237</a>
+        </div>
+    	<div class="footer_links"> 
+        <a href="#">About us</a>
+         <a href="privacy.html">Privacy policy</a> 
+        <a href="contact.html">Contact us </a>
+        <a href="">Create your own free web site</a>
+
+        </div>
+    
+    
+    </div>  
+ 
+   
+
+</div> <!--end of main container-->
+
+
+</body></html>

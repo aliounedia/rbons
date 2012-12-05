@@ -1,0 +1,70 @@
+
+{% extends "base_site.html" %}
+{% block content %}
+<table width ='50%' cellpadding =2 cellspacing =2>
+
+	 {% for d in  data %}
+		{% for key, vals in d.items  %}
+                        <tr>
+                        <td width ='100%'>
+                            <TABLE  width ='100%'>
+                             {% if key = 'user_yesterday' %}
+                                  <CAPTION> Vos Performances Rebons de la veille </CAPTION>
+                             {% endif %}
+                             {% if key = 'user_month' %}
+                                  <CAPTION> Vos Performances Rebons du Mois </CAPTION>
+                             {% endif %}
+
+                             {% if key = 'user_week' %}
+                                  <CAPTION> Vos Performances Rebons de la semaine </CAPTION>
+                             {% endif %}
+
+                             {% if key = 'max_yesterday' %}
+                                  <CAPTION> Meilleur Performances Rebons de la veille </CAPTION>
+                             {% endif %}
+                             {% if key = 'max_month' %}
+                                  <CAPTION> Meilleur Performances Rebons du Mois </CAPTION>
+                             {% endif %}
+
+                             {% if key = 'max_week' %}
+                                  <CAPTION> Meilleur Performances Rebons de la semaine </CAPTION>
+                             {% endif %}
+                                              <TR>
+                                                    <TH> VCPLUS </TH>
+                                                    <TH> VCMOIN</TH>
+                                                    <TH> UPPLUS</TH>
+                                                    <TH> UPMOIN </TH>
+                                                    <TH> TOTAL </TH>
+                                                    <TH> CA_Emission </TH>
+                                                    <TH> RA_Appels_traites </TH>
+                                              </TR>
+                                    {% for VCPLUS , VCMOIN , UPPLUS , UPMOIN , TOTAL , CA_Emission , RA_Appels_traites in vals %}
+                                              <TR>
+                                                
+                                                 <TD>{{ VCPLUS }}</TD>
+                                                 <TD>{{ VCMOIN }}</TD>
+                                                 <TD>{{ UPPLUS }}</TD>
+                                                 <TD>{{ UPMOIN }}</TD>
+                                                 <TD>{{ TOTAL }}</TD>
+                                                 <TD>{{ CA_Emission }}</TD>
+                                                 <TD>{{ RA_Appels_traites }} </TD>
+                                              </TR>
+                                    {% endfor  %}
+                                    
+                            </TABLE> 
+                        </td>
+                        </tr>
+                        <tr><td>---------------------------------------------</td></tr>
+                   
+		{% endfor %}
+     {% endfor %}
+</table>
+
+{% endblock %}
+
+
+
+
+
+
+
